@@ -29,6 +29,9 @@ public class BST {
 
 
     public boolean isEmpty() {
+        if(root == null){
+            return true;
+        }
         return false; // TODO implement me!
     }
 
