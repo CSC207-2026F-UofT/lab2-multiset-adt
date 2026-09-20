@@ -38,7 +38,7 @@ public abstract class MultiSet {
 
 
     /**
-     * @return How many items are in this multiset.
+     * @return How many items are there in this multiset.
      */
     abstract int size();
 
