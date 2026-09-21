@@ -16,32 +16,66 @@ public class LinkedListMultiSet extends MultiSet {
     private Node front;
     private int size;
 
-
     public void add(int item) {
-        Node newNode =  new Node(item);
+        Node newNode = new Node(item);
         newNode.next = front;
         front = newNode;
         size += 1;
     }
 
     public void remove(int item) {
+        // remove one instance of item
+        // check from first
+        if (front == null) {
+            return;
+        }
 
+        if (front.item == item) {
+            front = front.next;
+            return;
+        }
+
+        Node p = front;
+        while (p.next != null) {
+            if (p.next.item == item) {
+                p.next = p.next.next;
+                return;
+            }
+            p = p.next;
+        }
     }
 
     public boolean contains(int item) {
+        Node p = front;
+        while (p != null) {
+            if (p.item == item) {
+                return true;
+            }
+            p = p.next;
+        }
+
         return false;
     }
 
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
 
     public int count(int item) {
-        return -1;
+        int count = 0;
+        Node p = front;
+        while (p != null) {
+            if (p.item == item) {
+                count++;
+            }
+            p = p.next;
+        }
+
+        return count;
     }
 
     public int size() {
-        return -1;
+        return size;
     }
 }
