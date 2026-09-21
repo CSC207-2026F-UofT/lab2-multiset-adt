@@ -29,7 +29,11 @@ public class BST {
 
 
     public boolean isEmpty() {
-        return false; // TODO implement me!
+        if (this.root == null) {
+            return true;
+        }
+
+        return false;
     }
 
     public boolean contains(int item) {
