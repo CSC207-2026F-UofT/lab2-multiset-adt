@@ -74,8 +74,21 @@ public class BST {
         return -1;
     }
 
+    public int max(int a, int b) {
+        if (a == b) {
+           return a;
+        } else if (a < b) {
+            return b;
+        }
+        return a;
+    }
+
+
     public int height() {
-        return -1;
+        if (this.isEmpty()) {
+            return 0;
+        }
+        return max(this.left.height(), this.right.height());
     }
 
     public int count(int item) {
