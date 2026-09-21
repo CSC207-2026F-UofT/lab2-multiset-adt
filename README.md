@@ -52,10 +52,10 @@ should feel similar to code you saw in your first-year CS courses.
 
 ## Instructions
 
-- [ ] Choose one member of your team to fork the starter repository:
+- [X] Choose one member of your team to fork the starter repository:
   https://github.com/CSC207-2026F-UofT/lab2-multiset-adt
 
-- [ ] The repository owner should add the other team members as collaborators. This gives everyone
+- [X] The repository owner should add the other team members as collaborators. This gives everyone
   access to the same shared remote repository.
 
 > **Note:** On GitHub, check **Settings → General** and ensure that Issues are enabled.
@@ -63,7 +63,7 @@ should feel similar to code you saw in your first-year CS courses.
 
 ---
 
-- [ ] Get a local copy of the remote repository.
+- [X] Get a local copy of the remote repository.
 
       You can do this using either method from last week: `git clone <url>` or creating a new
       project from version control in IntelliJ.
