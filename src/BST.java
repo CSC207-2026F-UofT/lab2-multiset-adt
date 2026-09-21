@@ -47,7 +47,7 @@ public class BST {
 
 
     public void insert(int item) {
-
+        return N;
     }
 
 
