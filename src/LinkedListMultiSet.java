@@ -38,6 +38,14 @@ public class LinkedListMultiSet extends MultiSet {
 
 
     public int count(int item) {
+        int count = 0;
+        Node curr = this.front;
+        while (curr != null) {
+            if (curr.item == item) {
+                count += 1;
+            }
+            curr = curr.next;
+        }
         return -1;
     }
 
