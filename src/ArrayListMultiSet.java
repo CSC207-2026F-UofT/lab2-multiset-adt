@@ -44,9 +44,7 @@ public class ArrayListMultiSet extends MultiSet {
      * @return True if this multiset is empty.
      */
     @Override
-    boolean isEmpty() {
-        return false;
-    }
+    boolean isEmpty() { return lst.isEmpty(); }
 
     /**
      * Count how many times the given item appears in this multiset.
@@ -56,12 +54,20 @@ public class ArrayListMultiSet extends MultiSet {
      */
     @Override
     int count(int item) {
-        return -1;
+        int count = 0;
+        for (int i = 0; i < lst.size(); i++) {
+            if (lst.get(i).equals(item)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
      * @return How many items are in this multiset.
      */
+
+
     @Override
     int size() {
         return -1;
