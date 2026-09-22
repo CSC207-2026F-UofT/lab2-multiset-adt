@@ -52,10 +52,10 @@ should feel similar to code you saw in your first-year CS courses.
 
 ## Instructions
 
-- [ ] Choose one member of your team to fork the starter repository:
+- [X] Choose one member of your team to fork the starter repository:
   https://github.com/CSC207-2026F-UofT/lab2-multiset-adt
 
-- [ ] The repository owner should add the other team members as collaborators. This gives everyone
+- [X] The repository owner should add the other team members as collaborators. This gives everyone
   access to the same shared remote repository.
 
 > **Note:** On GitHub, check **Settings → General** and ensure that Issues are enabled.
@@ -63,20 +63,20 @@ should feel similar to code you saw in your first-year CS courses.
 
 ---
 
-- [ ] Get a local copy of the remote repository.
+- [X] Get a local copy of the remote repository.
 
       You can do this using either method from last week: `git clone <url>` or creating a new
       project from version control in IntelliJ.
 
 ---
 
-- [ ] Take some time to skim the rest of the instructions to get a sense of what you'll be doing
+- [X] Take some time to skim the rest of the instructions to get a sense of what you'll be doing
   in this activity. If you have any immediate questions, discuss them with your group or ask
   your TA.
 
 ---
 
-- [ ] As a team, explore the Python code and identify specific pieces of code that need to be
+- [X] As a team, explore the Python code and identify specific pieces of code that need to be
   translated. Also look at what has already been provided in the Java starter code,
   including the provided Java test files.
   > The **Initial Advice** section below highlights a few things your team should think about as 
@@ -84,17 +84,17 @@ should feel similar to code you saw in your first-year CS courses.
 
 ---
 
-- [ ] Based on your group discussion, create GitHub Issues describing the tasks your team needs to
+- [X] Based on your group discussion, create GitHub Issues describing the tasks your team needs to
   complete.
 
 ---
 
-- [ ] Once your team has created a set of Issues, each team member should be assigned one or more Issues
+- [X] Once your team has created a set of Issues, each team member should be assigned one or more Issues
   to start working on.
 
 ---
 
-- [ ] Create a branch for your assigned Issue and work locally to complete the task.
+- [X] Create a branch for your assigned Issue and work locally to complete the task.
 
 ---
 
