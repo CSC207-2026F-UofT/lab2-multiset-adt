@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
-
+   //add a comment
     @Test
     public void testRunsWithoutError() {
         Main.main(new String[]{});
