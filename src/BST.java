@@ -5,6 +5,7 @@
  *     CSC148 Course Notes Section 8.5 BST Implementation and Search</a>
  * if you want a refresher on BSTs, but it is not required to complete this assignment.
  */
+//hi
 public class BST {
     // we use Integer here so that we can set the root to null. This is the same idea as
     // how the Python code uses None in the BST implementation.
