@@ -27,7 +27,7 @@ public class BST {
         // left and right default to being null
     }
 
-
+    // Checks whether function is empty
     public boolean isEmpty() {
         return root == null;
     }
