@@ -33,7 +33,7 @@ public class LinkedListMultiSet extends MultiSet {
     }
 
     public boolean isEmpty() {
-        return false;
+        return this.front == null;
     }
 
 
