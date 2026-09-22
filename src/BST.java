@@ -27,9 +27,9 @@ public class BST {
         // left and right default to being null
     }
 
-
+    // Checks whether function is empty
     public boolean isEmpty() {
-        return false; // TODO implement me!
+        return root == null;
     }
 
     public boolean contains(int item) {
