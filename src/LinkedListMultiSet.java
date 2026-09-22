@@ -1,6 +1,7 @@
 
 // Node is only used inside the LinkedList class, so we define it in the same file;
 // there can only be one public class in a file, but there can also be non-public classes.
+// haha
 class Node {
     int item;
     Node next;
