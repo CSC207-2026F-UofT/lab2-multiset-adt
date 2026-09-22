@@ -10,7 +10,7 @@ public class TreeMultiSet extends MultiSet {
      */
     @Override
     void add(int item) {
-
+        root.insert(item);
     }
 
     /**
