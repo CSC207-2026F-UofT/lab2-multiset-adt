@@ -37,6 +37,15 @@ public class Tree {
     }
 
     /**
+     * Override the hashcode method to return due to the overridden equals method
+     * @return the hashcode of the root and subtrees
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(root, subtrees);
+    }
+
+    /**
      * Adds an item to the tree using the following rules:
      * 1. If the tree ie empty, the root is set to item
      * 2. If the tree has a root but no subtrees, create a new Tree with item and add it to the subtrees
@@ -63,6 +72,32 @@ public class Tree {
             }
         }
     }
+
+    /**
+     * Inserts child into the tree as a child of parent.
+     * @param child the child to be inserted
+     * @param parent the parent of the child. If parrent appears more than once, choose the first appearance.
+     * @return boolean true if the child was inserted, false if no parent was found
+     */
+    public boolean insertChild(int child, int parent) {
+        if (isEmpty()) {
+            return false;
+        }
+        else if (root == parent) {
+            subtrees.add(new Tree(child, new ArrayList<>()));
+            return true;
+        }
+        else {
+            for (Tree tree : subtrees) {
+                if (tree.root == parent) {
+                    tree.subtrees.add(new Tree(child, new ArrayList<>()));
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
 
     public void remove(int item) {
@@ -98,7 +133,7 @@ public class Tree {
 
 
     public int count(int item) {
-        return 0;
+
     }
 
     /**
