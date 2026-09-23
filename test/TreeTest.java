@@ -59,7 +59,7 @@ public class TreeTest {
 
     @Test
     public void testSizeEmpty() {
-        assertEquals(0, new Tree().size());
+        assertEquals(0, new Tree(null, new ArrayList<>()).size());
     }
 
     @Test
@@ -208,7 +208,7 @@ public class TreeTest {
     @Test
     public void testAddToEmpty() {
         Tree t = new Tree();
-        t.add(5);
+        t.insert(5);
         assertTrue(t.contains(5));
         assertEquals(1, t.size());
     }
@@ -216,7 +216,7 @@ public class TreeTest {
     @Test
     public void testAddToNonEmpty() {
         Tree t = sampleTree();
-        t.add(42);
+        t.insert(42);
         assertTrue(t.contains(42));
         assertEquals(8, t.size());
     }
@@ -224,7 +224,7 @@ public class TreeTest {
     @Test
     public void testAddDuplicate() {
         Tree t = tree(3);
-        t.add(3);
+        t.insert(3);
         assertEquals(2, t.count(3));
         assertEquals(2, t.size());
     }

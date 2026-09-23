@@ -9,13 +9,13 @@ public class Tree {
     private Integer root;
     private ArrayList<Tree> subtrees;
 
-    public Tree(int root, ArrayList<Tree> subtrees) {
+    public Tree(Integer root, ArrayList<Tree> subtrees) {
         this.root = root;
         this.subtrees = Objects.requireNonNullElseGet(subtrees, ArrayList::new);
     }
 
     public Tree() {
-        this(0, new ArrayList<>());
+        this(null, new ArrayList<>());
     }
 
     public boolean equals(Object obj) {
@@ -98,11 +98,29 @@ public class Tree {
         return false;
     }
 
+    /** Returns the average of all the values in the tree.
+     * @return the average of all the values in the tree
+     * **/
+    public float average() {
+        if (isEmpty()) {
+            return 0.0f;
+        }
+        else {
+            float sum = 0.0f;
+            for (Tree tree : subtrees) {
+                sum += tree.average();
+            }
+            return sum / subtrees.size();
+
+        }
+    }
 
 
     public void remove(int item) {
 
     }
+
+
 
 
     public boolean contains(int item) {
@@ -131,9 +149,25 @@ public class Tree {
         return root == null && subtrees.isEmpty();
     }
 
-
+    /**
+     * Counts the number of times item appears in the tree.
+     * @param item the item to count
+     * @return the number of times item appears in the tree.
+     */
     public int count(int item) {
-
+        if (isEmpty()) {
+            return 0;
+        }
+        else {
+            int count = 0;
+            if (root == item) {
+                count += 1;
+            }
+            for (Tree tree : subtrees) {
+                count += tree.count(item);
+            }
+            return count;
+        }
     }
 
     /**
