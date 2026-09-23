@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Tree extends MultiSet {
+public class Tree {
     // We recommend attempting this class last, as it hasn't been scaffolded for your team.
     // Even if your team doesn't have time to implement this class, it is a useful exercise
     // to think about how d you might split up the work to get the Tree and TreeMultiSet
@@ -36,19 +36,41 @@ public class Tree extends MultiSet {
 
     }
 
+    /**
+     * Adds an item to the tree using the following rules:
+     * 1. If the tree ie empty, the root is set to item
+     * 2. If the tree has a root but no subtrees, create a new Tree with item and add it to the subtrees
+     * 3. Otherwise pick a random number between 1 and 3, inclusive.
+     *  - If the number is 3, then create a new Tree with item and add it to the subtrees
+     *  - If the number is 1 or 2, then pick one of the existing subtrees at random, and
+     *  recurse on that subtree.
+     * @param item the item to add
+     */
+    public void insert(int item) {
+        if (isEmpty()) {
+            root = item;
+        }
+        else if (subtrees.isEmpty()) {
+            subtrees.add(new Tree(item, new ArrayList<>()));
+        }
+        else {
+            int randomNumber = (int) (Math.random() * 3) + 1;
+            if (randomNumber == 3) {
+                subtrees.add(new Tree(item, new ArrayList<>()));
+            }
+            else {
+                int randomIndex = (int) (Math.random() * subtrees.size());
+            }
+        }
+    }
 
-    @Override
-    void add(int item) {
+
+    public void remove(int item) {
 
     }
 
-    @Override
-    void remove(int item) {
 
-    }
-
-    @Override
-    boolean contains(int item) {
+    public boolean contains(int item) {
         if (isEmpty()) {
             return false;
         }
@@ -69,13 +91,13 @@ public class Tree extends MultiSet {
      *
      * @return boolean true if the tree is empty, which means the root is zero and the subtrees are empty
      */
-    @Override
-    boolean isEmpty() {
+
+    public boolean isEmpty() {
         return root == null && subtrees.isEmpty();
     }
 
-    @Override
-    int count(int item) {
+
+    public int count(int item) {
         return 0;
     }
 
@@ -83,8 +105,8 @@ public class Tree extends MultiSet {
      * Returns the number of nodes in the tree.
      * @return the number of nodes in the tree
      */
-    @Override
-    int size() {
+
+    public int size() {
         if (isEmpty()) {
             return 0;
         }
@@ -95,7 +117,7 @@ public class Tree extends MultiSet {
        return size;
     }
 
-    @Override
+
     public String toString() {
         return "Tree{" + "root=" + root + ", subtrees=" + subtrees + '}';
     }
