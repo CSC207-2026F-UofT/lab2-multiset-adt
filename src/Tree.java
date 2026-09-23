@@ -18,7 +18,23 @@ public class Tree extends MultiSet {
         this(0, new ArrayList<>());
     }
 
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Tree other = (Tree) obj;
+        if (root != other.root) {
+            return false;
+        }
+        return subtrees.equals(other.subtrees);
 
+    }
 
 
     @Override
@@ -33,7 +49,10 @@ public class Tree extends MultiSet {
 
     @Override
     boolean contains(int item) {
-        if (root == item) {
+        if (isEmpty()) {
+            return false;
+        }
+        else if (root == item) {
             return true;
         }
         else {
@@ -60,8 +79,26 @@ public class Tree extends MultiSet {
         return 0;
     }
 
+    /**
+     * Returns the number of nodes in the tree.
+     * @return the number of nodes in the tree
+     */
     @Override
     int size() {
-        return 0;
+        if (isEmpty()) {
+            return 0;
+        }
+       int size = 1;
+       for (Tree tree : subtrees) {
+           size += tree.size();
+       }
+       return size;
     }
+
+    @Override
+    public String toString() {
+        return "Tree{" + "root=" + root + ", subtrees=" + subtrees + '}';
+    }
+
+
 }
