@@ -6,7 +6,7 @@ public class Tree extends MultiSet {
     // Even if your team doesn't have time to implement this class, it is a useful exercise
     // to think about how d you might split up the work to get the Tree and TreeMultiSet
     // implemented.
-    private int root;
+    private Integer root;
     private ArrayList<Tree> subtrees;
 
     public Tree(int root, ArrayList<Tree> subtrees) {
@@ -71,7 +71,7 @@ public class Tree extends MultiSet {
      */
     @Override
     boolean isEmpty() {
-        return root == 0 && subtrees.isEmpty();
+        return root == null && subtrees.isEmpty();
     }
 
     @Override
