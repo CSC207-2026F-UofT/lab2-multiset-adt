@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Tree extends TreeMultiSet {
+public class Tree extends MultiSet {
     // We recommend attempting this class last, as it hasn't been scaffolded for your team.
     // Even if your team doesn't have time to implement this class, it is a useful exercise
-    // to think about how you might split up the work to get the Tree and TreeMultiSet
+    // to think about how d you might split up the work to get the Tree and TreeMultiSet
     // implemented.
     private int root;
     private ArrayList<Tree> subtrees;
@@ -19,6 +19,8 @@ public class Tree extends TreeMultiSet {
     }
 
 
+
+
     @Override
     void add(int item) {
 
@@ -31,12 +33,26 @@ public class Tree extends TreeMultiSet {
 
     @Override
     boolean contains(int item) {
+        if (root == item) {
+            return true;
+        }
+        else {
+            for (Tree tree : subtrees) {
+                if (tree.contains(item)) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
+    /**
+     *
+     * @return boolean true if the tree is empty, which means the root is zero and the subtrees are empty
+     */
     @Override
     boolean isEmpty() {
-        return false;
+        return root == 0 && subtrees.isEmpty();
     }
 
     @Override
