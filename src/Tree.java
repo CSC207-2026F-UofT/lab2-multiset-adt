@@ -115,9 +115,22 @@ public class Tree {
         }
     }
 
-
+    /**
+     * Removes only one instance of item. If item is not in the tree, do nothing.
+     * @param item The item to remove.
+     */
     public void remove(int item) {
 
+        if (isEmpty()) {
+            return;
+        }
+
+    }
+
+    /**
+     * Removes the root of the tree.
+     */
+    private void removeRoot() {
     }
 
 
