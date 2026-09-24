@@ -79,13 +79,17 @@ public class BST {
             this.left = null;
             this.right = null;
         } else if (this.left.isEmpty()) {
+            BST tempLeft = this.right.left;
+            BST tempRight = this.right.right;
             this.root = this.right.root;
-            this.left = this.right.left;
-            this.right = this.right.right;
+            this.left = tempLeft;
+            this.right = tempRight;
         } else if (this.right.isEmpty()) {
+            BST tempLeft = this.left.left;
+            BST tempRight = this.left.right;
             this.root = this.left.root;
-            this.left = this.left.left;
-            this.right = this.left.right;
+            this.left = tempLeft;
+            this.right = tempRight;
         } else {
             this.root = this.left.extractMax();
         }
@@ -95,9 +99,11 @@ public class BST {
     private int extractMax() {
         if (this.right.isEmpty()) {
             int max_item = this.root;
+            BST tempLeft = this.left.left;
+            BST tempRight = this.left.right;
             this.root = this.left.root;
-            this.left = this.left.left;
-            this.right = this.left.right;
+            this.left = tempLeft;
+            this.right = tempRight;
             return max_item;
         } else {
             return this.right.extractMax();
