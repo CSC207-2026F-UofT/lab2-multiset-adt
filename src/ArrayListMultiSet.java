@@ -57,7 +57,7 @@ public class ArrayListMultiSet extends MultiSet {
     int count(int item) {
         int county = 0;
         for (int x : lst){
-            if (x==item)){
+            if (x==item){
                 county+=1;
             }
 
