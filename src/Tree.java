@@ -69,6 +69,7 @@ public class Tree {
             }
             else {
                 int randomIndex = (int) (Math.random() * subtrees.size());
+                subtrees.get(randomIndex).insert(item);
             }
         }
     }
