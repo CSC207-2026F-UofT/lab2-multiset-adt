@@ -5,6 +5,7 @@
  *     CSC148 Course Notes Section 8.5 BST Implementation and Search</a>
  * if you want a refresher on BSTs, but it is not required to complete this assignment.
  */
+
 public class BST {
     // we use Integer here so that we can set the root to null. This is the same idea as
     // how the Python code uses None in the BST implementation.
@@ -29,7 +30,7 @@ public class BST {
 
 
     public boolean isEmpty() {
-        return false; // TODO implement me!
+       return root == null;// TODO implement me!
     }
 
     public boolean contains(int item) {
@@ -47,33 +48,93 @@ public class BST {
 
 
     public void insert(int item) {
-
+        if(root == null){
+            root = item;
+            left = new BST();
+            right = new BST();
+        } else if (item < this.root) {
+            this.left.insert(item);
+        } else {
+            this.right.insert(item);
+        }
     }
 
 
     public void delete(int item) {
-
+        if (this.isEmpty()){
+            return;
+        } else if (item < this.root){
+            this.left.delete(item);
+        } else if (item > this.root){
+            this.right.delete(item);
+        } else{
+            this.deleteRoot();
+        }
     }
 
     private void deleteRoot() {
-
+        if(this.left.isEmpty() && this.right.isEmpty()){
+            this.root = null;
+            return;
+        }
+        if (this.left.isEmpty()){
+            this.root = this.right.root;
+            this.left = this.right.left;
+            this.right = this.right.right;
+            return;
+        }
+        if (this.right.isEmpty()){
+            this.root = this.left.root;
+            this.right = this.left.right;
+            this.left = this.left.left;
+            return;
+        }
+        this.root = this.left.extractMax();
     }
 
 
     private int extractMax() {
-        return -1;
+        while(!this.right.isEmpty()){
+            this.root = this.right.root;
+            this.right = this.right.right;
+        }
+        int max = this.root;
+        this.root = this.left.root;
+        this.left = this.left.left;
+        this.right = this.left.right;
+        return max;
     }
 
     public int height() {
-        return -1;
+        if(this.isEmpty()){
+            return 0;
+        }
+        int lheight = this.left.height();
+        int rheight = this.right.height();
+        if(lheight > rheight){
+            return lheight + 1;
+        }
+        return rheight + 1;
     }
 
     public int count(int item) {
-        return -1;
+        if(this.isEmpty()){
+            return 0;
+        }
+        if(item < this.root){
+            return this.left.count(item);
+        }
+        if(item > this.root){
+            return this.right.count(item);
+        }
+        return 1 + this.left.count(item) + this.right.count(item);
     }
 
     public int getSize() {
-        return -1;
+        if(this.isEmpty()){
+            return 0;
+        }
+        return 1 + this.left.getSize() + this.right.getSize();
     }
 
     public static void main(String[] args) {
